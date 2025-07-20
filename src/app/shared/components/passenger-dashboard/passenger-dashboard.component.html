@@ -1,0 +1,17 @@
+<app-passenger-count [totalCount]="passArr.length"
+[checkInCount]="checkInCount"
+></app-passenger-count>
+
+<mat-list role="list" *ngIf="passArr.length > 0; else noPass">
+  <mat-list-item role="listitem" *ngFor="let pass of passArr">{{pass.fullname}}</mat-list-item>
+</mat-list>
+
+<ng-template #noPass>
+    <p class="alert alert-info">
+        No Passenger Added Yet !!!
+    </p>
+</ng-template>
+
+<app-passenger-card [getPassArr]="passArr"
+(removedArrEmit)="getArr($event)"
+></app-passenger-card>

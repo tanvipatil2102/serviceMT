@@ -1,0 +1,15 @@
+<mat-card *ngFor="let pass of getPassArr">
+   <div class="form-group">
+    <input type="text" [disabled]="!isInEditMode" [value]="pass.fullname" class="form-control" id="inputFormControl" #inputFormControl>
+   </div> 
+  <!-- <mat-card-title *ngIf="!isInEditMode">{{pass.fullname}}</mat-card-title> -->
+  <mat-card-subtitle class="mt-3">CheckIn Date :  <strong>{{(pass.checkInDate | date) || 'Not Checked In'}}</strong></mat-card-subtitle>
+  <mat-card-subtitle>Childrens:  <strong>{{(pass.children?.length) || 'No Childrens'}}</strong></mat-card-subtitle>
+
+  <mat-card-actions>
+    <button mat-raised-button *ngIf="!isInEditMode" color="primary" (click)="isInEditMode = !isInEditMode">Edit</button>
+    <button mat-raised-button *ngIf="isInEditMode" color="primary" (click)="onUpdate(pass, inputFormControl)">Done</button>
+
+    <button mat-raised-button color="warn" (click)="onRemove(pass)">Remove</button>
+  </mat-card-actions>
+</mat-card>
