@@ -64,16 +64,9 @@ export class PassengerService {
   }
 
   onRemovePass(obj : Ipassenger){
-    let matConfig = new MatDialogConfig()
-    matConfig.data = `Are you sure, You want to Remove ${obj.fullname} Passenger ???`
-    matConfig.width = '500px'
-    this._matDialog.open(GetConfirmPassComponent, matConfig)
-    .afterClosed().subscribe(res => {
-      if(res){
-        let getIndex = this.passengersArr.findIndex(num => obj.id === num.id);
+    let getIndex = this.passengersArr.findIndex(num => obj.id === num.id);
         this.passengersArr.splice(getIndex, 1);
         this._snackbar.openSnackBar('Passenger Removed Successfully !!!')
-      }
-    })
+    
   }
 }
