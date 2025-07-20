@@ -1,5 +1,11 @@
 <mat-card *ngFor="let pass of getPassArr">
    <div class="form-group">
+    <span class="colorSpan"
+    [ngClass]="{
+      'bg-primary' : pass.checkedIn,
+      'bg-danger' : !pass.checkedIn
+    }"
+    ></span>
     <input type="text" [disabled]="!isInEditMode" [value]="pass.fullname" class="form-control" id="inputFormControl" #inputFormControl>
    </div> 
   <!-- <mat-card-title *ngIf="!isInEditMode">{{pass.fullname}}</mat-card-title> -->

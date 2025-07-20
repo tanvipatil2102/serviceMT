@@ -5,3 +5,13 @@
     background-color: transparent;
     font-weight: bold;
 }
+
+.colorSpan {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    left: 5px;
+}
