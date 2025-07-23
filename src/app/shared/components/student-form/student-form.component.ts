@@ -18,10 +18,11 @@ export class StudentFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onStudentFormSubmit(studentForm : NgForm){
+  onStudentFormSub(studentForm : NgForm){
     if(studentForm.valid){
-      let obj = {...studentForm.value, id: this._uuid.uuid()}
+      let obj = {...studentForm.value, id :this._uuid.uuid()}
       this._studentService.createNewStudent(obj);
+      studentForm.reset();
     }
   }
 

@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { PassengerService } from '../../services/passenger.service';
+import { Component, OnInit } from '@angular/core';
 import { Ipassenger } from '../../models/passenger';
+import { PassengerService } from '../../services/passenger.service';
 
 @Component({
   selector: 'app-passenger-dashboard',
@@ -15,19 +15,16 @@ export class PassengerDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.passArr = this._passService.fetchAllPAssengers();
-    this.getCheckInCount();
+    this.passArr = this._passService.fetchAllPassengers();
+    this.getCheckInCount()
   }
 
   getCheckInCount(){
-     this.checkInCount = this.passArr.filter(num => {
-      return num.checkedIn
-    }).length
-
+    this.checkInCount = this.passArr.filter(num => num.checkedIn).length;
   }
 
-  getArr(event : any){
-    this.getCheckInCount();
+  removeFum($event : any){
+    this.getCheckInCount()
   }
 
 }

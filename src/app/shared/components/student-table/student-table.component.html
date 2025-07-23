@@ -7,19 +7,23 @@
                 <th>Email</th>
                 <th>Contact</th>
             </thead>
+
             <tbody>
                 <tr *ngFor="let std of stdArr">
                     <td>{{std.fname}}</td>
                     <td>{{std.lname}}</td>
                     <td>{{std.email}}</td>
                     <td>{{std.contact}}</td>
-                    <td><button class="btn btn-primary btn-sm">Edit</button></td>
-                    <td><button class="btn btn-danger btn-sm" (click)="onRemove(std)">Remove</button></td>
+                    <td><button class="btn btn-sm btn-primary">Edit</button></td>
+                    <td><button class="btn btn-sm btn-danger" (click)="onRemove(std)">Remove</button></td>
                 </tr>
             </tbody>
         </table>
+
         <ng-template #noStd>
-            <p class="alert alert-info">No Student Added Yet !!!</p>
+            <p class="alert alert-info">
+                No Student Added Yet !!
+            </p>
         </ng-template>
     </div>
 </div>

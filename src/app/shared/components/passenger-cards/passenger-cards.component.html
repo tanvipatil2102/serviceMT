@@ -1,0 +1,19 @@
+<mat-card class="mb-3">
+    <span class="checkInColor"
+    [ngClass]="{
+        'bg-primary' : getPassObj.checkedIn,
+        'bg-danger' : !getPassObj.checkedIn
+    }"
+    ></span>
+    <input type="text" #formControlNAme [disabled]="!isInEditMode" class="form-control" [value]="getPassObj.fullname" name="formControlNAme">
+    <!-- <mat-card-title>{{getPassObj.fullname}}</mat-card-title> -->
+    <mat-card-subtitle class="mt-3">Check In Date : <strong>{{(getPassObj.checkInDate | date) || 'Not Checked In'}}</strong></mat-card-subtitle>
+    <mat-card-subtitle>Childrens : <strong>{{(getPassObj.children?.length) || 'No Childrens'}}</strong> </mat-card-subtitle>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" *ngIf="!isInEditMode" (click)="isInEditMode= !isInEditMode">Edit</button>
+    <button mat-raised-button color="primary" *ngIf="isInEditMode" (click)="onUpdate(formControlNAme)" >Done</button>
+
+    <button mat-raised-button color="warn" (click)="onRemoveCard()">Remove</button>
+  </mat-card-actions>
+</mat-card>

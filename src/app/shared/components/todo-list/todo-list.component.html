@@ -3,16 +3,16 @@
         <ul class="list-group" *ngIf="todoArr.length > 0; else noTodo">
             <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoArr">
                 {{todo.todoItem}}
-
-                <div>
+                <div class="text-right">
                     <button class="btn btn-primary btn-sm">Edit</button>
-                    <button class="btn btn-danger btn-sm ml-2" (click)="onRemove(todo)">Remove</button>
+                    <button class="btn btn-danger btn-sm ml-2" (click)="onRemoveBtn(todo)">Remove</button>
+
                 </div>
             </li>
         </ul>
 
         <ng-template #noTodo>
-            <p class="alert alert-info">NO Todo Item Added Yet !!!</p>
+            <p class="alert alert-info">No Todo Item Added Yet !!</p>
         </ng-template>
     </div>
 </div>

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./passenger-count.component.scss']
 })
 export class PassengerCountComponent implements OnInit {
-  @Input() totalCount !: number;
+  @Input() totatlCount !: number;
   @Input() checkInCount !: number;
   constructor() { }
 

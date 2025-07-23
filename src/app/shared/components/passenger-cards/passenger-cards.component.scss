@@ -1,17 +1,21 @@
 .form-control:disabled{
     background-color: #e9ecef;
     opacity: 1;
-    border: transparent;
     background-color: transparent;
+    border: transparent;
     font-weight: bold;
 }
 
-.colorSpan {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
+mat-card{
+    position: relative;
+}
+
+.checkInColor {
+    width: 10px;
+    height: 10px;
     display: inline-block;
+    border-radius: 50%;
     position: absolute;
-    top: 28px;
-    left: 5px;
+    top: 30px;
+    left: 10px;
 }

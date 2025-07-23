@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Ipassenger } from '../models/passenger';
-import { SnackBarService } from './snack-bar.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { GetConfirmPassComponent } from '../components/get-confirm-pass/get-confirm-pass.component';
+import { SnackbarService } from './snackbar.service';
 
 @Injectable({
   providedIn: 'root'
@@ -49,24 +47,25 @@ export class PassengerService {
     },
   ]
   constructor(
-    private _snackbar : SnackBarService,
-    private _matDialog : MatDialog
+    private _snackbar : SnackbarService
   ) { }
 
-  fetchAllPAssengers(){
+  fetchAllPassengers(){
     return this.passengersArr
   }
 
-  onUpdate(obj : Ipassenger){
-    let getIndex = this.passengersArr.findIndex(num => obj.id === num.id);
-    this.passengersArr[getIndex] = obj;
-    this._snackbar.openSnackBar('Passenger Updated Succesfully !!!')
+  updatePassValue(pass : Ipassenger){
+    let getIndex = this.passengersArr.findIndex(num => pass.id === num.id)
+    this.passengersArr[getIndex] = pass
+    this._snackbar.openSnackBar(`${pass.fullname} Updated succesfully !!!`);
+
   }
 
-  onRemovePass(obj : Ipassenger){
-    let getIndex = this.passengersArr.findIndex(num => obj.id === num.id);
-        this.passengersArr.splice(getIndex, 1);
-        this._snackbar.openSnackBar('Passenger Removed Successfully !!!')
-    
+  removePass(pass : Ipassenger){
+    let getIndex = this.passengersArr.findIndex(num => pass.id === num.id)
+    this.passengersArr.splice(getIndex, 1)
+    this._snackbar.openSnackBar(`${pass.fullname} Removed succesfully !!!`);
+
   }
+
 }

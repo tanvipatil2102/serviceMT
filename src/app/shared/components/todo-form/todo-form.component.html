@@ -4,9 +4,10 @@
             <div class="card-body">
                 <form #todoForm="ngForm" (ngSubmit)="onTodoFormSubmit(todoForm)">
                     <div class="form-group">
-                        <label for="todoItem">TodoItem</label>
-                        <input type="text" class="form-control" ngModel required name="todoItem" id="todoItem">
+                        <label for="todoItem">Todo Item</label>
+                        <input type="text" class="form-control" required ngModel id="todoItem" name="todoItem">
                     </div>
+
                     <div class="text-right">
                         <button class="btn btn-primary">Add Todo</button>
                     </div>

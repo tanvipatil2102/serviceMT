@@ -11,7 +11,7 @@ import { TodoService } from '../../services/todo.service';
 export class TodoFormComponent implements OnInit {
 
   constructor(
-    private _uuidService : UuidService,
+    private _uuid : UuidService,
     private _todoService : TodoService
   ) { }
 
@@ -20,9 +20,12 @@ export class TodoFormComponent implements OnInit {
 
   onTodoFormSubmit(todoForm : NgForm){
     if(todoForm.valid){
-      let obj = {...todoForm.value, todoId : this._uuidService.uuid()}
+      
+      let obj = {...todoForm.value, todoId : this._uuid.uuid()}
       this._todoService.createNewTodo(obj);
+
       todoForm.reset();
+      
     }
   }
 

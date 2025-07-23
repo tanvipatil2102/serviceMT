@@ -1,4 +1,9 @@
-<app-passenger-count [totalCount]="passArr.length"
+
+<h1 class="font-weight-bold">
+    Airline Passengers
+</h1>
+
+<app-passenger-count [totatlCount]="passArr.length"
 [checkInCount]="checkInCount"
 ></app-passenger-count>
 
@@ -12,6 +17,7 @@
     </p>
 </ng-template>
 
-<app-passenger-card [getPassArr]="passArr"
-(removedArrEmit)="getArr($event)"
-></app-passenger-card>
+<app-passenger-cards *ngFor="let pass of passArr"
+[getPassObj]="pass"
+(emitRemoveFun)="removeFum($event)"
+></app-passenger-cards>

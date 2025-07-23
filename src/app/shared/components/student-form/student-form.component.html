@@ -2,24 +2,27 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form #studentForm="ngForm" (ngSubmit)="onStudentFormSubmit(studentForm)">
+                <form #studentForm="ngForm" (ngSubmit)="onStudentFormSub(studentForm)">
                     <div class="form-group">
                         <label for="fname">First Name</label>
-                        <input type="text" class="form-control" ngModel required name="fname" id="fname">
+                        <input type="text" class="form-control" id="fname" name="fname" ngModel required="">
                     </div>
                     <div class="form-group">
                         <label for="lname">Last Name</label>
-                        <input type="text" class="form-control" ngModel required name="lname" id="lname">
+                        <input type="text" class="form-control" id="lname" name="lname" ngModel required="">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" ngModel required name="email" id="email">
+                        <input type="text" class="form-control" id="email" name="email" ngModel required="">
                     </div>
                     <div class="form-group">
                         <label for="contact">Contact</label>
-                        <input type="text" class="form-control" ngModel required name="contact" id="contact">
+                        <input type="text" class="form-control" id="contact" name="contact" ngModel required="">
                     </div>
-                    <button class="btn btn-primary">Add Student</button>
+
+                    <div class="text-right">
+                        <button class="btn btn-primary">Add Student</button>
+                    </div>
                 </form>
             </div>
         </div>
